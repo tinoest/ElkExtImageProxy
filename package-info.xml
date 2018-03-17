@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<id>tinoest:ElkExtImageProxy</id>
+	<name>Elkarte External Image Proxy</name>
+	<version>1.0.0</version>
+	<type>addon</type>
+	<license><![CDATA[
+/**
+ * ExtImageProxy
+ *
+ * @author tinoest
+ * @license BSD-3
+ *
+ * @version 1.0.0
+ */
+]]></license>
+	<install for="1.1 - 1.1.99">
+		<license type="inline">This Elkarte addon is released under a BSD-3-Clause license.</license>
+		<require-file name="ExtImageProxy.integration.php" destination="SOURCEDIR" />
+		<hook hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy" />
+		<hook hook="integrate_general_mod_settings" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy_general_mod_settings" />
+	</install>
+
+	<uninstall for="1.1 - 1.1.99">
+		<hook reverse="true" hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy" />
+		<hook reverse="true" hook="integrate_general_mod_settings" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy_general_mod_settings" />
+		<remove-file name="SOURCEDIR/ExtImageProxy.integration.php" />
+	</uninstall>
+</package-info>
