@@ -35,7 +35,7 @@ function int_bufferExtImageProxy(&$buffer)
 							case 'weserv':
 								$url = str_replace('http://', '', $src[1]);
 								$exturl = 'https://images.weserv.nl/?url=';
-								if(isset($modSettings['extimageproxy_custom_url'])) {
+								if(!empty($modSettings['extimageproxy_custom_url'])) {
   									$exturl = 'https://'.$modSettings['extimageproxy_custom_url'].'/?url=';
 								}
 								return ' src="'.$exturl.urlencode( $url ).'"';
