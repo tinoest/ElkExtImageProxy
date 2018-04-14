@@ -18,13 +18,17 @@
 	<install for="1.1 - 1.1.99">
 		<license type="inline">This Elkarte addon is released under a BSD-3-Clause license.</license>
 		<require-file name="ExtImageProxy.integration.php" destination="SOURCEDIR" />
-		<hook hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy" />
-		<hook hook="integrate_general_mod_settings" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy_general_mod_settings" />
+		<require-file name="ExtImageProxy.english.php" destination="LANGUAGEDIR/english">The language strings</require-file>
+		<hook hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_bufferExtImageProxy" />
+		<hook hook="integrate_admin_areas" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_adminAreasExtImageProxy" />
+		<hook hook="integrate_sa_modify_modifications" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_adminExtImageProxy" />
 	</install>
 
 	<uninstall for="1.1 - 1.1.99">
-		<hook reverse="true" hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy" />
-		<hook reverse="true" hook="integrate_general_mod_settings" file="SOURCEDIR/ExtImageProxy.integration.php" function="ext_image_proxy_general_mod_settings" />
+		<hook reverse="true" hook="integrate_buffer" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_bufferExtImageProxy" />
+		<hook reverse="true" hook="integrate_admin_areas" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_adminAreasExtImageProxy" />
+		<hook reverse="true" hook="integrate_sa_modify_modifications" file="SOURCEDIR/ExtImageProxy.integration.php" function="int_adminExtImageProxy" />
 		<remove-file name="SOURCEDIR/ExtImageProxy.integration.php" />
+		<remove-file name="LANGUAGEDIR/english/ExtImageProxy.english.php" />
 	</uninstall>
 </package-info>
