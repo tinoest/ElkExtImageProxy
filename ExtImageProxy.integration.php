@@ -19,7 +19,7 @@ if (!defined('ELK'))
  *
  * - Used to change http url to https via a external proxy
  */
-function int_bufferExtImageProxy(&$buffer)
+function int_bufferExtImageProxy($buffer)
 {
 	global $modSettings;
 
