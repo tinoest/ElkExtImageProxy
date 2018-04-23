@@ -3,7 +3,7 @@
 <package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
 	<id>tinoest:ElkExtImageProxy</id>
 	<name>Elkarte External Image Proxy</name>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<type>addon</type>
 	<license><![CDATA[
 /**
@@ -12,7 +12,7 @@
  * @author tinoest
  * @license BSD-3
  *
- * @version 1.0.0
+ * @version 1.1.1
  */
 ]]></license>
 	<install for="1.1 - 1.1.99">
